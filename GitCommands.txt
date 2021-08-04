@@ -20,4 +20,7 @@
     git commit -m "<commit name>"
   # Ex.: git commit -m "Test"
     git push origin master
+
+### ===== Push from GitHub =====
+    git pull --verbose
     
