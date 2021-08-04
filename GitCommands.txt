@@ -3,11 +3,20 @@
     sudo apt-get install git
   # Configure
     git config --global user.name "mcdmytro"
-    git config --global user.email "dmytro.mekeshko@desy.de"
+    git config --global user.email "dmytro.meleshko@desy.de"
+    
+### ===== Creating a local repository =====
+  # Configure a directory to synchronize
+    git init <repository name>
+  # Ex.: git init Docs
 
 ### ===== Clone from GitHub =====
   # A directory with the same name is to be created in ~/GitHub/ with all the files cloned/
     git clone http://github.com/mcdmytro/<repository name>.git
-  #Ex.: 
-    git clone http://github.com/mcdmytro/Xilinx.git
-  
+  # Ex.: git clone http://github.com/mcdmytro/Docs.git
+    
+### ===== Push to GitHub =====
+    git add .
+    git commit -m "<commit name>"
+  # Ex.: git commit -m "Test"
+    git push origin master
