@@ -1,0 +1,30 @@
+Fast execution:
+cd ~/.ssh
+ssh-keygen -t rsa
+ssh-copy-id meleshko@sshcc1.kek.jp
+ssh meleshko@sshcc1.kek.jp
+cd ~/.ssh
+ssh-keygen -t rsa
+ssh-copy-id -i kek_myLinux.pub meleshko@login.cc.kek.jp
+exit
+cat ~/.ssh/kek.pub | ssh -Y kek "mkdir -p ~/.ssh && chmod 700 ~/.ssh && cat >>  ~/.ssh/authorized_keys"
+
+
+Detailed instruction:
+#Execute locally:
+$ cd ~/.ssh
+$ ssh-keygen -t rsa
+  --->Enter <name1> of a local key
+  --->Enter empty key twice
+$ ssh-copy-id meleshko@sshcc1.kek.jp
+  --->Enter password
+$ ssh meleshko@sshcc1.kek.jp
+#Execute at sshcc1 server
+$ cd ~/.ssh
+$ ssh-keygen -t rsa
+  --->Enter <name2> of a local key
+  --->Enter empty key twice
+$ ssh-copy-id -i <name2>.pub meleshko@login.cc.kek.jp
+$ exit
+#Execute locally:
+$ cat ~/.ssh/<name1>.pub | ssh -Y kek "mkdir -p ~/.ssh && chmod 700 ~/.ssh && cat >>  ~/.ssh/authorized_keys"
